@@ -44,7 +44,10 @@ public class TargetPlatformHelper {
 		}
 
 		ITargetDefinition definition = findTargetDefinition(log, tp, bep);
+		return setTargetPlatform(log, definition, user);
+	}
 
+	public static Job setTargetPlatform(TaskingLog log, ITargetDefinition definition, boolean user) {
 		if (definition == null) {
 			throw new IllegalStateException("cannot resolve target definition");
 		}
